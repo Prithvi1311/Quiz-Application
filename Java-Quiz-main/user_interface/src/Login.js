@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import { UserContext } from "./userContext";
 import "react-toastify/dist/ReactToastify.css";
 import "./style/Login.css";
@@ -100,7 +100,6 @@ const Login = () => {
           </button>
         </div>
       </div>
-      <ToastContainer autoClose={2000} />
     </>
   );
 };

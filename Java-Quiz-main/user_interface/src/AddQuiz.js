@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { UserContext } from "./userContext";
 import axios from "axios";
 import "./style/AddQuiz.css";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import { FiChevronLeft } from "react-icons/fi";
@@ -129,7 +129,6 @@ const AddQuiz = () => {
           </div>
         </form>
       </div>
-      <ToastContainer autoClose={2000} />
     </>
   );
 };
