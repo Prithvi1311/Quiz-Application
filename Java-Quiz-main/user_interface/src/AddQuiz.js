@@ -42,7 +42,9 @@ const AddQuiz = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post(`${process.env.REACT_APP_API_URL || "http://localhost:8080"}/quizzes`, quiz);
+      const API_URL = process.env.REACT_APP_API_URL || "http://localhost:8080";
+      const baseURL = API_URL.startsWith("http") ? API_URL : `https://${API_URL}`;
+      const response = await axios.post(`${baseURL}/quizzes`, quiz);
       console.log(response.data);
       toast.success("Added successful!");
       navigate("/home");

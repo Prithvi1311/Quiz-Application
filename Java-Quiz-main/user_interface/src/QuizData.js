@@ -16,7 +16,9 @@ const QuizData = () => {
   useEffect(() => {
     const fetchQuizDetails = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_API_URL || "http://localhost:8080"}/quizzes/${id}`);
+        const API_URL = process.env.REACT_APP_API_URL || "http://localhost:8080";
+        const baseURL = API_URL.startsWith("http") ? API_URL : `https://${API_URL}`;
+        const response = await axios.get(`${baseURL}/quizzes/${id}`);
         setQuizDetails(response.data);
         console.log(response.data);
       } catch (error) {
@@ -74,7 +76,9 @@ const QuizData = () => {
     };
 
     try {
-      await axios.post(`${process.env.REACT_APP_API_URL || "http://localhost:8080"}/submissions`, submission);
+      const API_URL = process.env.REACT_APP_API_URL || "http://localhost:8080";
+      const baseURL = API_URL.startsWith("http") ? API_URL : `https://${API_URL}`;
+      await axios.post(`${baseURL}/submissions`, submission);
       setScoreResult({ score, totalQuestions });
       toast.success("Quiz Submitted Successfully!");
     } catch (error) {

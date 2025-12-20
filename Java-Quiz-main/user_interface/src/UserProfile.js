@@ -13,7 +13,9 @@ const UserProfile = () => {
         const fetchSubmissions = async () => {
             if (username) {
                 try {
-                    const response = await axios.get(`${process.env.REACT_APP_API_URL || "http://localhost:8080"}/submissions/user/${username}`);
+                    const API_URL = process.env.REACT_APP_API_URL || "http://localhost:8080";
+                    const baseURL = API_URL.startsWith("http") ? API_URL : `https://${API_URL}`;
+                    const response = await axios.get(`${baseURL}/submissions/user/${username}`);
                     setSubmissions(response.data);
                 } catch (error) {
                     console.error("Error fetching submissions:", error);
