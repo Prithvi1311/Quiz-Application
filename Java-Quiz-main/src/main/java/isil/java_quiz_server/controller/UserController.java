@@ -1,6 +1,5 @@
 package isil.java_quiz_server.controller;
 
-
 import isil.java_quiz_server.modal.User;
 import isil.java_quiz_server.repository.UserRepository;
 import isil.java_quiz_server.requests.LoginRequest;
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin("http://localhost:3000")
 public class UserController {
     @Autowired
     private UserRepository userRepository;
@@ -22,7 +20,7 @@ public class UserController {
     private LoginService loginService;
 
     @PostMapping("/register")
-    User newUser( @RequestBody User newUser) {
+    User newUser(@RequestBody User newUser) {
         return userRepository.save(newUser);
     }
 
@@ -41,6 +39,5 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(loginResponse);
         }
     }
-
 
 }

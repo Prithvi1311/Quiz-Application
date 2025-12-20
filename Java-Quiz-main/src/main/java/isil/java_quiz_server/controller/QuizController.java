@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin("http://localhost:3000")
 public class QuizController {
 
     @Autowired
@@ -25,6 +24,7 @@ public class QuizController {
     public Quiz createQuiz(@RequestBody Quiz quiz) {
         return quizRepository.save(quiz);
     }
+
     @GetMapping("/quizzes/{id}")
     public ResponseEntity<Quiz> getQuizById(@PathVariable Long id) {
         Optional<Quiz> quizOptional = quizRepository.findById(id);
