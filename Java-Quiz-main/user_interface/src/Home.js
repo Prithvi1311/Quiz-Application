@@ -3,6 +3,7 @@ import axios from "axios";
 import { UserContext } from "./userContext";
 import { Link } from "react-router-dom";
 import "./style/Home.css";
+import { toast } from "react-toastify"; // Added import
 import "react-toastify/dist/ReactToastify.css";
 
 const Home = () => {
@@ -25,6 +26,7 @@ const Home = () => {
   }, []);
 
   const handleLogout = () => {
+    toast.dismiss(); // Clear all toasts
     setUser(null);
     localStorage.removeItem("user");
   };
