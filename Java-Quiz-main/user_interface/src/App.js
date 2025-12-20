@@ -42,7 +42,7 @@ const App = () => {
           element={user ? <UserProfile /> : <Navigate to="/" />}
         />
       </Routes>
-      <ToastContainer />
+      <ToastContainer autoClose={2000} limit={3} />
     </Router>
   );
 };

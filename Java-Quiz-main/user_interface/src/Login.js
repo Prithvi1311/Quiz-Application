@@ -100,7 +100,7 @@ const Login = () => {
           </button>
         </div>
       </div>
-      <ToastContainer />
+      <ToastContainer autoClose={2000} />
     </>
   );
 };

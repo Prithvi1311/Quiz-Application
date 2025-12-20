@@ -129,7 +129,7 @@ const AddQuiz = () => {
           </div>
         </form>
       </div>
-      <ToastContainer />
+      <ToastContainer autoClose={2000} />
     </>
   );
 };

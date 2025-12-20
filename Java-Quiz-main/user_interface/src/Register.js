@@ -30,7 +30,7 @@ const Register = () => {
 
       setTimeout(() => {
         navigate("/");
-      }, 2000);
+      }, 1000);
     } catch (error) {
       console.error(error);
       toast.error("An unexpected error occurred. Please try again later.");
@@ -108,7 +108,7 @@ const Register = () => {
           </button>
         </div>
       </div>
-      <ToastContainer />
+      <ToastContainer autoClose={2000} />
     </>
   );
 };
