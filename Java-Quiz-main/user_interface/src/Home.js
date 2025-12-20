@@ -26,7 +26,8 @@ const Home = () => {
   }, []);
 
   const handleLogout = () => {
-    toast.dismiss(); // Clear all toasts
+    toast.dismiss();
+    toast.success("Logged out successfully");
     setUser(null);
     localStorage.removeItem("user");
   };
